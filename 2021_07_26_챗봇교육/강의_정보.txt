@@ -1,0 +1,40 @@
+주제: 2021 SW중심대학사업단 AI 챗봇 교육 프로그램
+시간: 2021. 7. 26.(월) ~ 7. 29.(목) 13:00~18:00
+            7. 30.(금) 13:00~17:00
+
+자료 공유 : https://bit.ly/3i0mKPM
+
+[ 아나콘다 설치 ]
+구글 : anaconda download
+https://www.anaconda.com/products/individual
+다운받은 설치 파일 더블클릭해서 [Next] 여러 번 클릭하면 설치 완료됨!
+
+[ tensorflow 설치 ]
+시작 > anaconda 3 > Anaconda Prompt(anaconda3)
+
+# NVidia GPU 가 있는 사람
+conda install tensorflow-gpu
+
+# NVidia GPU 가 없는 사람
+conda install tensorflow
+
+y : 설치
+n : 취소
+
+[ MariaDB 설치 ]
+구글 : mariadb download
+https://mariadb.org/download/
+다운받은 설치 파일을 더블 클릭해서 계속 [Next] 를 눌러 설치하면 되는데
+주의 사항으로 중간에 "Use UTF8 as default server's character set" 을 체크해서
+데이터베이스의 기본 캐릭터셋을 UTF8로 지정해야 한다.
+이유는 UTF8 체크를 안하면 한글이 깨져서 저장됨.
+
+[ MariaDB 사용자 추가 ]
+# HeidiSQL 로 접속해서 사용자 추가
+create user 'user1'@'localhost' identified by 'pass1';
+create user 'user1'@'%' identified by 'pass1';
+grant all privileges on test.* to 'user1'@'localhost';
+grant all privileges on test.* to 'user1'@'%';
+flush privileges;
+
+
